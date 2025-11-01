@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About CINEMADISE - Our Story</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: #333333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation */
+      .main-nav {
+        background: #fcfcfc;
+        box-shadow: 0 2px 10px rgba(108, 67, 36, 0.1);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-size: 28px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .logo-cinema {
+        color: #6c4324;
+      }
+
+      .logo-dise {
+        color: #ee481a;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: #6c4324;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #ee481a;
+      }
+
+      .nav-cta {
+        background: #ee481a;
+        color: white !important;
+        padding: 10px 25px;
+        border-radius: 6px;
+      }
+
+      /* Hero Section */
+      .about-hero {
+        background: linear-gradient(135deg, #6c4324 0%, #974420 100%);
+        color: #fcfcfc;
+        padding: 100px 20px 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .about-hero::before {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: rgba(238, 72, 26, 0.1);
+        border-radius: 50%;
+        top: -100px;
+        right: -100px;
+      }
+
+      .about-hero h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .about-hero p {
+        font-size: 24px;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.95;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Story Section */
+      .story-section {
+        padding: 100px 20px;
+        background: #fcfcfc;
+      }
+
+      .story-content {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .story-content h2 {
+        color: #6c4324;
+        font-size: 42px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .story-content p {
+        font-size: 19px;
+        line-height: 1.9;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      .highlight-box {
+        background: linear-gradient(135deg, #ee481a 0%, #c2461d 100%);
+        color: white;
+        padding: 40px;
+        border-radius: 12px;
+        margin: 50px 0;
+        text-align: center;
+      }
+
+      .highlight-box h3 {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+
+      .highlight-box p {
+        font-size: 18px;
+        color: white;
+        opacity: 0.95;
+      }
+
+      /* Mission & Vision */
+      .mission-vision {
+        padding: 100px 20px;
+        background: #6c4324;
+        color: #fcfcfc;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 60px;
+        color: #ee481a;
+      }
+
+      .mv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 60px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .mv-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 50px 40px;
+        border-radius: 12px;
+        border: 2px solid rgba(238, 72, 26, 0.3);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .mv-card:hover {
+        transform: translateY(-10px);
+        border-color: #ee481a;
+      }
+
+      .mv-card h3 {
+        font-size: 36px;
+        color: #ee481a;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      .mv-card p {
+        font-size: 19px;
+        line-height: 1.8;
+        opacity: 0.95;
+      }
+
+      /* Values Section */
+      .values-section {
+        padding: 100px 20px;
+        background: linear-gradient(to bottom, #f5f5f5 0%, #fcfcfc 100%);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 20px;
+        color: #974420;
+        margin-bottom: 60px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .value-card {
+        background: white;
+        padding: 50px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(108, 67, 36, 0.08);
+        border-top: 5px solid #ee481a;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 30px rgba(238, 72, 26, 0.15);
+      }
+
+      .value-icon {
+        font-size: 50px;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .value-card h3 {
+        color: #6c4324;
+        font-size: 26px;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .value-card p {
+        color: #666;
+        line-height: 1.8;
+        font-size: 17px;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        background: linear-gradient(135deg, #974420 0%, #6c4324 100%);
+        padding: 80px 20px;
+        color: #fcfcfc;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 56px;
+        font-weight: 700;
+        color: #ee481a;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 20px;
+        opacity: 0.9;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: 100px 20px;
+        background: #fcfcfc;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        font-size: 42px;
+        color: #6c4324;
+        margin-bottom: 25px;
+      }
+
+      .cta-section p {
+        font-size: 22px;
+        color: #974420;
+        margin-bottom: 40px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 20px 50px;
+        background: #ee481a;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background: #c2461d;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(238, 72, 26, 0.4);
+      }
+
+      /* Footer */
+      footer {
+        background: #6c4324;
+        color: #fcfcfc;
+        padding: 60px 20px 30px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h4 {
+        color: #ee481a;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .footer-section a {
+        display: block;
+        color: #fcfcfc;
+        text-decoration: none;
+        margin-bottom: 12px;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        opacity: 1;
+        color: #ee481a;
+      }
+
+      .footer-section p {
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(252, 252, 252, 0.1);
+        padding-top: 30px;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .about-hero h1 {
+          font-size: 38px;
+        }
+
+        .about-hero p {
+          font-size: 18px;
+        }
+
+        .story-content h2,
+        .section-title,
+        .cta-section h2 {
+          font-size: 32px;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mv-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-content">
+          <div class="nav-logo">
+            <span class="logo-cinema">CINEMA</span
+            ><span class="logo-dise">DISE</span>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="team.html">Team</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html#signup" class="nav-cta">Get Early Access</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="container">
+        <h1>Our Story</h1>
+        <p>Transforming Uganda's cinema experience, one booking at a time</p>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+      <div class="container">
+        <div class="story-content">
+          <h2>The Beginning</h2>
+          <p>
+            CINEMADISE was born from a simple frustration: standing in long
+            queues at Kampala's cinemas, unsure if your preferred seats would
+            still be available. As passionate film enthusiasts, we experienced
+            this repeatedly and knew there had to be a better way.
+          </p>
+          <p>
+            Our journey began with research into Uganda's cinema landscape. We
+            discovered that while the world had moved toward digital
+            convenience, most of Uganda's movie lovers were still stuck with
+            manual booking systems. Only one cinema chain offered online
+            booking, while others relied on third-party solutions or no digital
+            presence at all.
+          </p>
+
+          <div class="highlight-box">
+            <h3>💡 The Insight</h3>
+            <p>
+              Ugandans deserve the same seamless cinema experience enjoyed
+              globally, but built specifically for our unique needs—mobile money
+              integration, low-bandwidth optimization, and celebration of local
+              cinema culture.
+            </p>
+          </div>
+
+          <p>
+            Inspired by global platforms like Fandango, but designed
+            specifically for Uganda's unique needs, we set out to create
+            something different. CINEMADISE isn't just about digitizing an old
+            process— it's about building Uganda's cinema culture for the modern
+            era.
+          </p>
+          <p>
+            We started with a prototype, pitched it to cinema operators, and
+            listened. We learned about their challenges with revenue tracking,
+            demand prediction, and operational efficiency. We understood
+            moviegoers' need for convenience, mobile money integration, and
+            real-time information. From these insights, CINEMADISE was refined
+            into the platform it is today.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+      <div class="container">
+        <h2 class="section-title">Our Purpose</h2>
+        <div class="mv-grid">
+          <div class="mv-card">
+            <h3>🎯 Our Vision</h3>
+            <p>
+              To become the leading provider of cinema management software in
+              Uganda, supporting the growth of the local film industry and
+              contributing to cultural and economic development.
+            </p>
+          </div>
+          <div class="mv-card">
+            <h3>🚀 Our Mission</h3>
+            <p>
+              To revolutionize the cinema experience in Uganda by providing a
+              user-friendly, efficient, and accessible booking system that
+              enhances operational efficiency for cinema operators and delivers
+              unparalleled convenience to moviegoers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+      <div class="container">
+        <h2 class="section-title" style="color: #6c4324">Our Core Values</h2>
+        <p class="section-subtitle">
+          These principles guide everything we do at CINEMADISE
+        </p>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <span class="value-icon">✨</span>
+            <h3>Exceptional Experience</h3>
+            <p>
+              We deliver seamless, enjoyable interactions that transform
+              movie-going from a chore into an anticipated pleasure. Every
+              touchpoint is designed to delight.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🌍</span>
+            <h3>Accessibility First</h3>
+            <p>
+              Every Ugandan, regardless of technical expertise or economic
+              status, should be able to easily book cinema experiences. We build
+              for everyone.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🤝</span>
+            <h3>Community Connection</h3>
+            <p>
+              We celebrate Uganda's cinema culture while fostering belonging
+              among movie lovers and supporting local filmmakers. Cinema brings
+              us together.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🔬</span>
+            <h3>Transparent Innovation</h3>
+            <p>
+              We use cutting-edge technology openly and honestly, with clear
+              communication about how we improve the cinema ecosystem. No black
+              boxes here.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">🇺🇬</span>
+            <h3>Cultural Pride</h3>
+            <p>
+              We showcase both international and local films while building
+              Uganda's position as an East African entertainment hub. Uganda's
+              stories matter.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <span class="value-icon">⚡</span>
+            <h3>Convenience</h3>
+            <p>
+              We offer easy and accessible booking options for all users,
+              ensuring a hassle-free experience from start to finish. Simple.
+              Fast. Reliable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <h2 style="font-size: 38px; text-align: center; margin-bottom: 20px">
+          Building Uganda's Cinema Future
+        </h2>
+        <p style="font-size: 20px; text-align: center; opacity: 0.9">
+          Every booking brings us closer to our vision
+        </p>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">10-20</span>
+            <p class="stat-label">Cinema Partners</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <p class="stat-label">Uganda Focused</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2 Min</span>
+            <p class="stat-label">Booking Time</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2025</span>
+            <p class="stat-label">Launching Soon</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Be Part of the Story?</h2>
+        <p>Join us in revolutionizing Uganda's cinema experience</p>
+        <a href="index.html#signup" class="cta-button">Get Early Access</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div style="font-size: 32px; font-weight: 700; margin-bottom: 20px">
+              <span class="logo-cinema">CINEMA</span
+              ><span class="logo-dise">DISE</span>
+            </div>
+            <p>Book Your Cinema Story</p>
+            <p style="margin-top: 10px">
+              Revolutionizing Uganda's cinema experience
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="team.html">Our Team</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-section">
+            <h4>For Cinemas</h4>
+            <a href="index.html#operator">Request Demo</a>
+            <a href="contact.html">Partner With Us</a>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <p>📧 info@cinemadise.ug</p>
+            <p>📱 +256 700 000 000</p>
+            <p>📍 Kampala, Uganda</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 CINEMADISE. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

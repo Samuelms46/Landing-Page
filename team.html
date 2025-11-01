@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet the CINEMADISE Team</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        color: #333333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Navigation */
+      .main-nav {
+        background: #fcfcfc;
+        box-shadow: 0 2px 10px rgba(108, 67, 36, 0.1);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-logo {
+        font-size: 28px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .logo-cinema {
+        color: #6c4324;
+      }
+
+      .logo-dise {
+        color: #ee481a;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: #6c4324;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #ee481a;
+      }
+
+      .nav-cta {
+        background: #ee481a;
+        color: white !important;
+        padding: 10px 25px;
+        border-radius: 6px;
+      }
+
+      /* Hero Section */
+      .team-hero {
+        background: linear-gradient(135deg, #974420 0%, #6c4324 100%);
+        color: #fcfcfc;
+        padding: 100px 20px 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-hero::before {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        background: rgba(238, 72, 26, 0.1);
+        border-radius: 50%;
+        top: -120px;
+        left: -120px;
+      }
+
+      .team-hero::after {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        background: rgba(238, 72, 26, 0.15);
+        border-radius: 50%;
+        bottom: -100px;
+        right: -100px;
+      }
+
+      .team-hero h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .team-hero p {
+        font-size: 24px;
+        max-width: 800px;
+        margin: 0 auto;
+        opacity: 0.95;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Introduction Section */
+      .team-intro {
+        padding: 80px 20px;
+        background: #fcfcfc;
+        text-align: center;
+      }
+
+      .team-intro h2 {
+        color: #6c4324;
+        font-size: 42px;
+        margin-bottom: 25px;
+      }
+
+      .team-intro p {
+        font-size: 20px;
+        color: #666;
+        max-width: 900px;
+        margin: 0 auto 40px;
+        line-height: 1.8;
+      }
+
+      .team-values {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 50px;
+      }
+
+      .value-badge {
+        background: linear-gradient(135deg, #ee481a 0%, #c2461d 100%);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 16px;
+        box-shadow: 0 4px 15px rgba(238, 72, 26, 0.3);
+      }
+
+      /* Team Section */
+      .team-section {
+        padding: 100px 20px;
+        background: linear-gradient(to bottom, #f5f5f5 0%, #fcfcfc 100%);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 42px;
+        color: #6c4324;
+        margin-bottom: 20px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 20px;
+        color: #974420;
+        margin-bottom: 60px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 50px;
+        margin-top: 60px;
+      }
+
+      .team-member {
+        text-align: center;
+        background: white;
+        padding: 50px 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(108, 67, 36, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .team-member::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #ee481a 0%, #c2461d 100%);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 12px 40px rgba(108, 67, 36, 0.15);
+      }
+
+      .team-member:hover::before {
+        transform: scaleX(1);
+      }
+
+      .member-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #974420 0%, #ee481a 100%);
+        margin: 0 auto 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 70px;
+        color: white;
+        border: 6px solid #fcfcfc;
+        box-shadow: 0 8px 25px rgba(108, 67, 36, 0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .team-member:hover .member-photo {
+        transform: scale(1.05);
+      }
+
+      .team-member h3 {
+        color: #6c4324;
+        font-size: 26px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .team-member .role {
+        color: #ee481a;
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .team-member p {
+        color: #666;
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+
+      .member-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .skill-tag {
+        background: #f5f5f5;
+        color: #6c4324;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        border: 1px solid #e0e0e0;
+      }
+
+      /* Culture Section */
+      .culture-section {
+        padding: 100px 20px;
+        background: #fcfcfc;
+      }
+
+      .culture-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .culture-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(108, 67, 36, 0.08);
+        text-align: center;
+        border-top: 4px solid #ee481a;
+      }
+
+      .culture-icon {
+        font-size: 50px;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .culture-card h3 {
+        color: #6c4324;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .culture-card p {
+        color: #666;
+        line-height: 1.7;
+      }
+
+      /* Join Team Section */
+      .join-section {
+        background: linear-gradient(135deg, #6c4324 0%, #974420 100%);
+        padding: 100px 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .join-section h2 {
+        font-size: 42px;
+        margin-bottom: 25px;
+      }
+
+      .join-section p {
+        font-size: 22px;
+        opacity: 0.95;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .join-section .cta-button {
+        display: inline-block;
+        padding: 20px 50px;
+        background: #ee481a;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .join-section .cta-button:hover {
+        background: #c2461d;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(238, 72, 26, 0.4);
+      }
+
+      /* Stats Section */
+      .stats-section {
+        padding: 80px 20px;
+        background: #fcfcfc;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        font-size: 48px;
+        font-weight: 700;
+        color: #ee481a;
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 18px;
+        color: #666;
+      }
+
+      /* Footer */
+      footer {
+        background: #6c4324;
+        color: #fcfcfc;
+        padding: 60px 20px 30px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h4 {
+        color: #ee481a;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .footer-section a {
+        display: block;
+        color: #fcfcfc;
+        text-decoration: none;
+        margin-bottom: 12px;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        opacity: 1;
+        color: #ee481a;
+      }
+
+      .footer-section p {
+        margin-bottom: 10px;
+        opacity: 0.8;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(252, 252, 252, 0.1);
+        padding-top: 30px;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .team-hero h1 {
+          font-size: 38px;
+        }
+
+        .team-hero p {
+          font-size: 18px;
+        }
+
+        .section-title,
+        .team-intro h2,
+        .join-section h2 {
+          font-size: 32px;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .team-values {
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <div class="container">
+        <div class="nav-content">
+          <div class="nav-logo">
+            <span class="logo-cinema">CINEMA</span
+            ><span class="logo-dise">DISE</span>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="team.html">Team</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html#signup" class="nav-cta">Get Early Access</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="team-hero">
+      <div class="container">
+        <h1>Meet Our Team</h1>
+        <p>
+          Passionate film enthusiasts building the future of cinema in Uganda
+        </p>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="team-intro">
+      <div class="container">
+        <h2>The People Behind CINEMADISE</h2>
+        <p>
+          We're a diverse team of innovators, technologists, and cinema lovers
+          united by a single mission: making movie-going effortless for every
+          Ugandan. From our developers crafting seamless experiences to our
+          partnership team connecting with cinemas, every member brings unique
+          expertise and shared passion for transforming Uganda's entertainment
+          landscape.
+        </p>
+
+        <div class="team-values">
+          <div class="value-badge">🎬 Cinema Lovers</div>
+          <div class="value-badge">💡 Problem Solvers</div>
+          <div class="value-badge">🇺🇬 Uganda Proud</div>
+          <div class="value-badge">🚀 Innovation Driven</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="team-section">
+      <div class="container">
+        <h2 class="section-title">Our Leadership Team</h2>
+        <p class="section-subtitle">
+          Meet the visionaries driving CINEMADISE forward
+        </p>
+
+        <div class="team-grid">
+          <!-- Founder -->
+          <div class="team-member">
+            <div class="member-photo">👤</div>
+            <h3>Founder & CEO</h3>
+            <p class="role">Visionary Leader</p>
+            <p>
+              A film enthusiast since high school, passionate about transforming
+              Uganda's cinema landscape through innovative technology solutions.
+              Brings years of experience in tech entrepreneurship and a deep
+              understanding of Uganda's entertainment ecosystem.
+            </p>
+            <div class="member-skills">
+              <span class="skill-tag">Strategy</span>
+              <span class="skill-tag">Business Dev</span>
+              <span class="skill-tag">Cinema Tech</span>
+            </div>
+          </div>
+
+          <!-- Tech Lead -->
+          <div class="team-member">
+            <div class="member-photo">💻</div>
+            <h3>Lead Developer</h3>
+            <p class="role">Technical Architect</p>
+            <p>
+              Building robust, scalable systems optimized for Uganda's
+              mobile-first audience. Expert in low-bandwidth solutions and
+              mobile money integration, ensuring CINEMADISE works flawlessly
+              even in challenging network conditions.
+            </p>
+            <div class="member-skills">
+              <span class="skill-tag">Full Stack</span>
+              <span class="skill-tag">Mobile Optimization</span>
+              <span class="skill-tag">API Integration</span>
+            </div>
+          </div>
+
+          <!-- Design Lead -->
+          <div class="team-member">
+            <div class="member-photo">🎨</div>
+            <h3>Head of Design</h3>
+            <p class="role">User Experience Specialist</p>
+            <p>
+              Crafting intuitive, beautiful interfaces that make cinema booking
+              effortless for every Ugandan moviegoer. Specializes in
+              accessibility-first design and creating delightful user
+              experiences across all devices.
+            </p>
+            <div class="member-skills">
+              <span class="skill-tag">UI/UX Design</span>
+              <span class="skill-tag">Brand Identity</span>
+              <span class="skill-tag">User Research</span>
+            </div>
+          </div>
+
+          <!-- Partnerships -->
+          <div class="team-member">
+            <div class="member-photo">🤝</div>
+            <h3>Cinema Relations Manager</h3>
+            <p class="role">Partnership Lead</p>
+            <p>
+              Building strong relationships with cinema operators across Uganda,
+              ensuring mutual success and growth. Deep industry knowledge and
+              proven track record in stakeholder management and strategic
+              partnerships.
+            </p>
+            <div class="member-skills">
+              <span class="skill-tag">Relationship Building</span>
+              <span class="skill-tag">Negotiations</span>
+              <span class="skill-tag">Account Management</span>
+            </div>
+          </div>
+
+          <!-- Operations -->
+          <div class="team-member">
+            <div class="member-photo">📊</div>
+            <h3>Operations Director</h3>
+            <p class="role">Efficiency Expert</p>
+            <p>
+              Streamlining processes and ensuring smooth operations from ticket
+              booking to cinema operator support. Expert in process
+              optimization, quality assurance, and delivering exceptional
+              customer experiences at scale.
+            </p>
+            <div class="member-skills">
+              <span class="skill-tag">Operations</span>
+              <span class="skill-tag">Process Design</span>
+              <span class="skill-tag">Quality Control</span>
+            </div>
+          </div>
+
+          <!-- Marketing -->
+          <div class="team-member">
+            <div class="member-photo">📱</div>
+            <h3>Marketing Manager</h3>
+            <p class="role">Brand Strategist</p>
+            <p>
+              Connecting with Uganda's movie lovers through authentic
+              storytelling and community engagement. Specializes in digital
+              marketing, content creation, and building brands that resonate
+              with local audiences.
+            </p>
+            <div class="member-skills">
+              <span class="skill-tag">Digital Marketing</span>
+              <span class="skill-tag">Content Strategy</span>
+              <span class="skill-tag">Community Building</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture-section">
+      <div class="container">
+        <h2 class="section-title">Our Team Culture</h2>
+        <p class="section-subtitle">What makes working at CINEMADISE special</p>
+
+        <div class="culture-grid">
+          <div class="culture-card">
+            <span class="culture-icon">🎯</span>
+            <h3>Mission-Driven</h3>
+            <p>
+              Every team member is passionate about our mission to revolutionize
+              Uganda's cinema experience. We're not just building software—we're
+              building culture.
+            </p>
+          </div>
+
+          <div class="culture-card">
+            <span class="culture-icon">🌱</span>
+            <h3>Growth Mindset</h3>
+            <p>
+              We encourage continuous learning and innovation. Every challenge
+              is an opportunity to grow, and every success is celebrated
+              together.
+            </p>
+          </div>
+
+          <div class="culture-card">
+            <span class="culture-icon">🤲</span>
+            <h3>Collaborative Spirit</h3>
+            <p>
+              We win as a team. Cross-functional collaboration, open
+              communication, and mutual support are core to how we work.
+            </p>
+          </div>
+
+          <div class="culture-card">
+            <span class="culture-icon">⚡</span>
+            <h3>Move Fast</h3>
+            <p>
+              We're building something new in Uganda. We move quickly, iterate
+              often, and aren't afraid to pivot when we learn something new.
+            </p>
+          </div>
+
+          <div class="culture-card">
+            <span class="culture-icon">🎉</span>
+            <h3>Celebrate Wins</h3>
+            <p>
+              From small victories to major milestones, we take time to
+              celebrate our progress and appreciate each other's contributions.
+            </p>
+          </div>
+
+          <div class="culture-card">
+            <span class="culture-icon">🇺🇬</span>
+            <h3>Uganda First</h3>
+            <p>
+              We're proudly Ugandan, building solutions specifically for our
+              market. Local context and cultural understanding guide everything
+              we do.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">6+</span>
+            <p class="stat-label">Team Members</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <p class="stat-label">Cinema Passionate</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10-20</span>
+            <p class="stat-label">Cinema Partners</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2025</span>
+            <p class="stat-label">Launch Year</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Team Section -->
+    <section class="join-section">
+      <div class="container">
+        <h2>Join Our Growing Team</h2>
+        <p>
+          We're always looking for passionate individuals who share our vision
+          of transforming Uganda's cinema experience. If you're excited about
+          technology, movies, and making a real impact, we'd love to hear from
+          you.
+        </p>
+        <a href="contact.html" class="cta-button">Get In Touch</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div style="font-size: 32px; font-weight: 700; margin-bottom: 20px">
+              <span class="logo-cinema" style="color: #fcfcfc">CINEMA</span
+              ><span class="logo-dise">DISE</span>
+            </div>
+            <p>Book Your Cinema Story</p>
+            <p style="margin-top: 10px">
+              Revolutionizing Uganda's cinema experience
+            </p>
+          </div>
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="team.html">Our Team</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-section">
+            <h4>For Cinemas</h4>
+            <a href="index.html#operator">Request Demo</a>
+            <a href="contact.html">Partner With Us</a>
+          </div>
+          <div class="footer-section">
+            <h4>Connect</h4>
+            <p>Email info@cinemadise.com</p>
+            <p>Tel +256 759-723-184</p>
+            <p>Location: Makerere University Kampala, Uganda</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 CINEMADISE. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

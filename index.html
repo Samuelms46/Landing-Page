@@ -54,10 +54,10 @@
             <h2 style="font-size: 36px; color: #6c4324; margin-bottom: 30px;">Join the Cinema Revolution</h2>
             
             <div class="audience-toggle">
-                <button class="toggle-btn active" onclick="switchAudience('moviegoer')">
+                <button class="toggle-btn active" data-audience="moviegoer" onclick="switchAudience('moviegoer', event)">
                     I'm a Movie Lover
                 </button>
-                <button class="toggle-btn" onclick="switchAudience('operator')">
+                <button class="toggle-btn" data-audience="operator" onclick="switchAudience('operator', event)">
                     I'm a Cinema Operator
                 </button>
             </div>
@@ -312,6 +312,7 @@
             </div>
         </div>
     </section>
+    </div>
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -374,18 +375,25 @@
         }
         
         // Audience toggle (for home page)
-        function switchAudience(audience) {
-            // Update buttons
-            document.querySelectorAll('.toggle-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
+        function switchAudience(audience, evt) {
+            const buttons = document.querySelectorAll('.toggle-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
             
-            // Update content
+            const targetButton = evt && evt.currentTarget
+                ? evt.currentTarget
+                : Array.from(buttons).find(btn => btn.dataset.audience === audience);
+            
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+            
             document.querySelectorAll('.cta-content').forEach(content => {
                 content.classList.remove('active');
             });
-            document.getElementById(audience + '-content').classList.add('active');
+            const targetContent = document.getElementById(audience + '-content');
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
         }
         
         // Scroll to CTA
@@ -395,21 +403,7 @@
             
             // Wait a moment for page to load
             setTimeout(() => {
-                // Switch to the correct audience
-                const buttons = document.querySelectorAll('.toggle-btn');
-                buttons.forEach(btn => btn.classList.remove('active'));
-                
-                if (audience === 'moviegoer') {
-                    buttons[0].classList.add('active');
-                } else {
-                    buttons[1].classList.add('active');
-                }
-                
-                // Show correct content
-                document.querySelectorAll('.cta-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                document.getElementById(audience + '-content').classList.add('active');
+                switchAudience(audience);
                 
                 // Scroll to CTA section
                 document.querySelector('.cta-section').scrollIntoView({ 

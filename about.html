@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About CINEMADISE - Our Story</title>
     <link rel="stylesheet" href="about.css" />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Navigation -->
@@ -21,6 +26,11 @@
             <a href="team.html">Team</a>
             <a href="contact.html">Contact</a>
             <a href="index.html#signup" class="nav-cta">Get Early Access</a>
+          </div>
+          <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
         </div>
       </div>
@@ -55,6 +65,9 @@
           </p>
 
           <div class="highlight-box">
+            <div class="highlight-icon">
+              <!-- <i class="fas fa-lightbulb"></i> -->
+            </div>
             <h3>The Insight</h3>
             <p>
               Ugandans deserve the same seamless cinema experience enjoyed
@@ -89,7 +102,10 @@
         <h2 class="section-title">Our Purpose</h2>
         <div class="mv-grid">
           <div class="mv-card">
-            <h3>🎯 Our Vision</h3>
+            <div class="mv-icon">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h3>Our Vision</h3>
             <p>
               To cultivate Uganda's digital CINEMADISE, a thriving ecosystem
               where technology unlocks seamless joy for movie lovers and
@@ -98,7 +114,10 @@
             </p>
           </div>
           <div class="mv-card">
-            <h3>🚀 Our Mission</h3>
+            <div class="mv-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3>Our Mission</h3>
             <p>
               To revolutionize Uganda's cinema experience by providing a
               user-friendly, efficient, and accessible booking platform that
@@ -120,7 +139,7 @@
 
         <div class="values-grid">
           <div class="value-card">
-            <span class="value-icon">✨</span>
+            <span class="value-icon"><i class="fas fa-star"></i></span>
             <h3>Exceptional Experience</h3>
             <p>
               We deliver seamless, enjoyable interactions that transform
@@ -130,7 +149,9 @@
           </div>
 
           <div class="value-card">
-            <span class="value-icon">🌍</span>
+            <span class="value-icon"
+              ><i class="fas fa-universal-access"></i
+            ></span>
             <h3>Accessibility First</h3>
             <p>
               Every Ugandan, regardless of technical expertise or economic
@@ -140,7 +161,7 @@
           </div>
 
           <div class="value-card">
-            <span class="value-icon">🤝</span>
+            <span class="value-icon"><i class="fas fa-handshake"></i></span>
             <h3>Community Connection</h3>
             <p>
               We celebrate Uganda's cinema culture while fostering belonging
@@ -150,7 +171,7 @@
           </div>
 
           <div class="value-card">
-            <span class="value-icon">🔬</span>
+            <span class="value-icon"><i class="fas fa-microscope"></i></span>
             <h3>Transparent Innovation</h3>
             <p>
               We use cutting-edge technology openly and honestly, with clear
@@ -159,7 +180,7 @@
           </div>
 
           <div class="value-card">
-            <span class="value-icon">🇺🇬</span>
+            <span class="value-icon"><i class="fas fa-heart"></i></span>
             <h3>Cultural Pride</h3>
             <p>
               We showcase both international and local films while building
@@ -168,7 +189,7 @@
           </div>
 
           <div class="value-card">
-            <span class="value-icon">⚡</span>
+            <span class="value-icon"><i class="fas fa-bolt"></i></span>
             <h3>Convenience</h3>
             <p>
               We offer easy and accessible booking options for all users,
@@ -258,5 +279,21 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      // Mobile menu toggle
+      function toggleMobileMenu() {
+        document.querySelector(".nav-links").classList.toggle("active");
+      }
+
+      // Close mobile menu when clicking on a link
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            document.querySelector(".nav-links").classList.remove("active");
+          });
+        });
+      });
+    </script>
   </body>
 </html>

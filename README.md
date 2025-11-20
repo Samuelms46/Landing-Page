@@ -2,7 +2,7 @@
 
 ## Overview
 
-CINEMADISE is a concept landing experience for a Ugandan cinema ticketing platform. The prototype highlights value propositions for moviegoers and cinema operators, showcases product mockups, and captures early-access leads.
+CINEMADISE is Ugandan's first cinema platform aimed at revolutionizing the movie-going experience through seamless digital booking. The prototype highlights value propositions for moviegoers and cinema operators, showcases product mockups, and captures early-access leads.
 
 ## Live Sections
 
@@ -16,13 +16,10 @@ CINEMADISE is a concept landing experience for a Ugandan cinema ticketing platfo
 ```
 Landing Page/
 ├── images/
-│   ├── Homescreen.png
+│   ├── home-screen.png
 │   ├── SAMUEL.jpeg
-│   ├── Screenshot 2025-10-31 103718.png
-│   ├── Screenshot 2025-10-31 103753.png
-│   ├── Screenshot 2025-10-31 103840.png
-│   ├── e-ticket.png
-│   └── seats.png
+│   ├── payment.png
+│   ├── seats.png
 ├── about.html
 ├── contact.html
 ├── index.html
@@ -51,3 +48,5 @@ Landing Page/
 ## Assets
 
 All imagery lives under `images/` and is optimized for static use in the prototype. Replace with production-ready assets before launch.
+
+Done by Samuel Muwanguzi, Founder CINEMADISE

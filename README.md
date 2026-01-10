@@ -2,7 +2,7 @@
 
 ## Overview
 
-CINEMADISE is Ugandan's first cinema platform aimed at revolutionizing the movie-going experience through seamless digital booking. The prototype highlights value propositions for moviegoers and cinema operators, showcases product mockups, and captures early-access leads.
+CINEMADISE is Ugandan's first cinema platform aimed at revolutionizing the movie-going experience through seamless digital booking. This Landing page highlights value propositions for moviegoers and cinema operators, showcases product mockups, and captures early-access leads.
 
 ## Live Sections
 
@@ -21,32 +21,14 @@ Landing Page/
 │   ├── payment.png
 │   ├── seats.png
 ├── about.html
+├── about.css
 ├── contact.html
+├── contact.css
 ├── index.html
 ├── style.css
+├── team.css
 └── team.html
 ```
 
-## Tech Stack
-
-- **HTML5** for static markup
-- **CSS3** for layout and visual design (`style.css` plus inline page-specific styles)
-- **Vanilla JavaScript** for CTA toggling and submission stubs (`index.html` footer script)
-
-## Getting Started
-
-1. Clone or download the repository.
-2. Open `index.html` in a modern browser to explore the landing experience.
-3. Navigate to `about.html`, `team.html`, or `contact.html` for the additional sections.
-
-## Design System Highlights
-
-- Color palette anchored on warm neutrals (`#6C4324`, `#974420`, `#EE481A`, `#FCFCFC`).
-- Typography: Inter family with emphasis weights for headings and CTAs.
-- Components: Responsive navigation, card grids, CTA forms, stat bands, and gradient hero banners.
-
-## Assets
-
-All imagery lives under `images/` and is optimized for static use in the prototype. Replace with production-ready assets before launch.
-
-Done by Samuel Muwanguzi, Founder CINEMADISE
+Created by Samuel Muwanguzi,
+Founder CINEMADISE
